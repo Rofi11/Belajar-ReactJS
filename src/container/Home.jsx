@@ -18,7 +18,11 @@ class Home extends Component {
                     time="3.14"
                     title="tutorial bagian 3"
                     desc="100x tonton dalam 7 hari"/>
-                <YutubeComp/>
+                <YutubeComp 
+                    time="10.00"
+                    title="tutorial bagian 4"
+                    desc="500x tonton dalam 10 hari"/>
+                <YutubeComp />
             </div>
         )
     }

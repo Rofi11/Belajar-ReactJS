@@ -1,18 +1,19 @@
 import React from "react"
 import './YutubeComp.css'
 
+
 // stateless component
 const YutubeComp = (props) => {
     return (
-      <div className="container">
+      // <div className="container">
         <div className="yutube-wrapper">
           <div className="img-thumb">
-              <img src="../public/logo192.png"></img>
+              <img src="https://i.ytimg.com/vi/7eUuuc-TEQE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCiZz6RoGcqR4RckQR70vfQzYOaBA"></img>
               <p className="time">{props.time}</p>
           </div>
             <p className="title">{props.title}</p>
             <p className="desc">{props.desc}</p>
-        </div>
+        {/* </div> */}
       </div>
     );
 }

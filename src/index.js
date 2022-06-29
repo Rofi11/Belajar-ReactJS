@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './container/Home';
 
+// remote github nya bernama coba-react
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
