@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import YutubeComp from '../component/YutubeComp/YutubeComp';
+// import YutubeComp from '../../component/YutubeComp/YutubeComp';
+import Product from '../Product/Product';
 
 // statefull component karena pakai class
 class Home extends Component {
     render() {
         return (
             <div>
+                {/* <p>Yuotube Component</p>
+                <hr />
                 <YutubeComp
                     time="7.12"
                     title="tutorial bagian 1"
@@ -22,7 +25,8 @@ class Home extends Component {
                     time="10.00"
                     title="tutorial bagian 4"
                     desc="500x tonton dalam 10 hari"/>
-                <YutubeComp />
+                <YutubeComp /> */}
+                <Product/>
             </div>
         )
     }

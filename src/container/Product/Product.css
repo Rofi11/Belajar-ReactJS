@@ -1,0 +1,83 @@
+.header{
+    
+    background: #68c93e;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 400px;
+    height: 100px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.logo img{
+    height: 100px;
+    width: 100px;
+    margin-top: -20px;
+    margin-left: -15px;
+}
+
+.troley{
+    position: relative;
+}
+
+.troley img{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.count{
+    background: #2d3c8d;
+    padding: 5px;
+    border-radius: 50%;
+    min-width: 10px;
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    position: absolute;
+    bottom: 6px;
+}
+
+.card{
+    margin-left: 35px;
+    width: 320px;
+    border: 2px solid #eee;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #eee;
+}
+
+.img-thumb-prod{
+    display: flex;
+    justify-content: center;
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: #2d3c8d;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+button:hover {
+    border: 2px solid #2d3c8d;
+}
+
+.input{
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input[value= "{4}"] {
+    display: flex;
+    justify-content: center;
+}

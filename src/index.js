@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './container/Home';
+import Home from './container/Home/Home';
 
 // remote github nya bernama coba-react
 
