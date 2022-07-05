@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 // import YutubeComp from '../../component/YutubeComp/YutubeComp';
-import Product from '../Product/Product';
+import LifeCycleComp from '../LifeCycleComp/LifeCycleComp';
+// import Product from '../Product/Product';
+
 
 // statefull component karena pakai class
 class Home extends Component {
+    state = {
+        showComponent : true
+    }
+
+    componentDidMount() {
+        // setTimeout(() => {
+        //     this.setState({
+        //         showComponent: false
+        //     })
+        // }, 15000)
+    }
     render() {
         return (
             <div>
@@ -26,7 +39,14 @@ class Home extends Component {
                     title="tutorial bagian 4"
                     desc="500x tonton dalam 10 hari"/>
                 <YutubeComp /> */}
-                <Product/>
+                {/* <p>Counter</p>
+                <hr />
+                <Product/> */}
+                <p>LifeCycle Component</p>
+                <hr />
+                {
+                    this.state.showComponent ? <LifeCycleComp/> : null
+                }
             </div>
         )
     }

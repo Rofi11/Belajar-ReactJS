@@ -28,7 +28,7 @@ class CardProduct extends Component {
             order: this.state.order + 1
         }, () => {
             // panggil method
-            //  value yg dikirim adalah this.state.order yg sudah berubah nilai nya can dikirim ke atas
+            //  value yg dikirim adalah this.state.order yg sudah berubah nilai nya, dan dikirim ke atas
             this.handleCounterChange(this.state.order)
         })
     }

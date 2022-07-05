@@ -33,7 +33,7 @@ class Product extends Component {
                     </div>
                 </div>
                 <CardProduct onCounterChange={(value) => {this.handleCounterChange(value)}}/> 
-                {/* urutan 1 => lanjutan nya susai urutan*/}
+                {/* urutan 1 => lanjutan nya susuai urutan*/}
                     {/* onCounterChange adalah props , nama yg dipake bebas, ini  contoh props yg memanggil function*/}
                     {/* function nya yg dapat merubah nilai dari parent nya */}
                     {/* akan ambil data value nya dari method yg berjalan di CardProduct handleCounterChange lalau dikirim ke handleCounterChange yg di halaman ini / yg diatas */}
