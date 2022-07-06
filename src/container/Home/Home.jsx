@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Blogpost from '../BlogPost/BlogPost';
 // import YutubeComp from '../../component/YutubeComp/YutubeComp';
-import LifeCycleComp from '../LifeCycleComp/LifeCycleComp';
+// import LifeCycleComp from '../LifeCycleComp/LifeCycleComp';
 // import Product from '../Product/Product';
 
 
@@ -42,11 +43,14 @@ class Home extends Component {
                 {/* <p>Counter</p>
                 <hr />
                 <Product/> */}
-                <p>LifeCycle Component</p>
+                {/* <p>LifeCycle Component</p>
                 <hr />
                 {
                     this.state.showComponent ? <LifeCycleComp/> : null
-                }
+                } */}
+                <p>BlogPost</p>
+                <hr />
+                <Blogpost/>
             </div>
         )
     }
