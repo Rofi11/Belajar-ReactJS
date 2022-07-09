@@ -15,6 +15,7 @@ class Blogpost extends Component {
             body: '',
             userId:1
         },
+        isUpdate : false,
     }
 
     getPostApi = () => {
@@ -39,31 +40,73 @@ class Blogpost extends Component {
             })
     }
 
+    handleUpdate = (data)  => {
+        console.log(data)
+        this.setState({
+            FormBlogPost : data,
+            isUpdate : true // mnetriger isUpdate yg false jadi true
+        })
+    }
+
     handleFormChange = (event) => {
         // console.log('form change', event.target)
         let FormBlogPostNew = {...this.state.FormBlogPost} //Destrugsign assigment ambil data dari FormBlogPost jadi variabel baru
         // arah title dan body nya saja
         FormBlogPostNew[event.target.name] = event.target.value //name dari input nya, title dan body yg di target value utk di ubah
         // Di pake utk id nya
-        let timestamp = new Date().getTime()
-        FormBlogPostNew['id'] = timestamp
+        if(!this.state.isUpdate){ 
+            let timestamp = new Date().getTime()
+            // dibuat kondisi agar tidak error, id baru ditambah saat tidak ada yg di update, saat ada update id dari timestamp tidak akan ada
+            FormBlogPostNew['id'] = timestamp
+        }
         this.setState({
             FormBlogPost: FormBlogPostNew
         })
     }
 
     PostDataToAPi = () => {
-        axios.post('https://jsonplaceholder.typicode.com/posts', this.state.FormBlogPost)
+        axios.post('https://jsonplaceholder.typicode.com/posts', this.state.FormBlogPost) //this.state.FormBlogPost adalah parameter
             .then((res) => {
                 console.log(res)
                 this.getPostApi()
+                    // membalikan form menjadi kosong/semula
+                this.setState({
+                    FormBlogPost: {
+                        id:1,
+                        title: '',
+                        body: '',
+                        userId:1
+                    },
+                })
             }, (err) => {
-                console.log('erro: ', err)
+                console.log('error: ', err)
             })
     }
 
+    PutDataToApi = () => {
+        axios.put(`https://jsonplaceholder.typicode.com/posts/${this.state.FormBlogPost.id}` , this.state.FormBlogPost)//this.state.FormBlogPost adalah parameter dan object yg dikirim utk di update berdasarkan id nya
+        .then(res => {
+            console.log(res)
+            this.getPostApi()
+                // membalikan form menjadi semula setelah mengupdate dan mengembalikan fungsinya menjadi post lagi
+            this.setState({
+                isUpdate: false,
+                FormBlogPost: {
+                    id:1,
+                    title: '',
+                    body: '',
+                    userId:1
+                },
+            })
+        })
+    }
+
     handleSubmit = () => {
-        this.PostDataToAPi()
+        if(this.state.isUpdate) { // jiks true maka sudah dpt trigger dari handleUpdate
+            this.PutDataToApi()
+        } else { // jika false berarti tidak ada action update dalam pages
+            this.PostDataToAPi()
+        }
         // liat di console nya di data object
     }
 
@@ -73,14 +116,14 @@ class Blogpost extends Component {
                 <p className='section-title'>BlogPost</p>
                 <div className="form-add-post">
                     <label htmlFor="title">Title </label>
-                    <input type="text" name='title' placeholder='add title' onChange={this.handleFormChange} />
+                    <input type="text" name='title' value={this.state.FormBlogPost.title} placeholder='add title' onChange={this.handleFormChange} />
                     <label htmlFor="body">Blog Content</label>
-                    <textarea name="body" id="body" cols="30" rows="10" onChange={this.handleFormChange}></textarea>
+                    <textarea name="body" id="body" cols="30" rows="10" value={this.state.FormBlogPost.body} placeholder='add Blog Content' onChange={this.handleFormChange}></textarea>
                     <button className='btn-submit' onClick={this.handleSubmit}>simpan</button>
                 </div>
                 {
                     this.state.post.map(post => {
-                        return <Post key={post.id} data={post} remove={this.handleRemove}/>
+                        return <Post key={post.id} data={post} remove={this.handleRemove} Update={this.handleUpdate}/>
                     })
                 }
                 
