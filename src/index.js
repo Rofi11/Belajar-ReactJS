@@ -19,6 +19,7 @@ root.render(
             <Link to="/"> BlogPost </Link>
             <Link to="/Product"> Product </Link>
             <Link to="/LifeCycleComp"> LifeCycleComp </Link>
+            <Link to="/youtube-component"> Youtube </Link>
         </div>
         <Home/>
     </React.StrictMode>  

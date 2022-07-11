@@ -1,6 +1,6 @@
 // belajar utk mengkonsumsi API publict
 import React, { Component,Fragment } from 'react';
-import Post from '../../component/Post/Post';
+import Post from '../../../component/Post/Post';
 import './BlogPost.css'
 import axios from 'axios';
 
