@@ -113,6 +113,8 @@ class Blogpost extends Component {
     render() {
         return(
             <Fragment>
+                <p>Halaman BlogPost/Pages Utama</p>
+                <hr />
                 <p className='section-title'>BlogPost</p>
                 <div className="form-add-post">
                     <label htmlFor="title">Title </label>

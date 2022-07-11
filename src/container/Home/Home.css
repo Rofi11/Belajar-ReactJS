@@ -1,0 +1,13 @@
+.navigation{
+    padding: 30px;
+    background-color: aqua;
+}
+
+.navigation a{
+    padding: 10px 40px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: aquamarine;
+    border-radius: 4px;
+}

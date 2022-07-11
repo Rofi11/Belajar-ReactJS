@@ -4,14 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './container/Home/Home';
+import {BrowserRouter, Route, Link } from "react-router-dom"; // import bagian BrowserRouter disini
+import './container/Home/Home.css'
+
 
 // remote github nya bernama coba-react
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>  
+  <BrowserRouter>
+    <React.StrictMode>
+      {/* navigation di tambahkan di tempat merender */}
+        <div className="navigation">
+            <Link to="/"> BlogPost </Link>
+            <Link to="/Product"> Product </Link>
+            <Link to="/LifeCycleComp"> LifeCycleComp </Link>
+        </div>
+        <Home/>
+    </React.StrictMode>  
+  </BrowserRouter>
 );
 
 

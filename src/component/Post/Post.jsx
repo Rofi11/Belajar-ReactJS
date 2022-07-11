@@ -3,7 +3,7 @@ import React from 'react';
 const Post = (props) => {
     return(
         <div className="post">
-                <div className="img-thumb">
+                <div className="img-thumb-dummy">
                     <img src="https://placeimg.com/200/150/tech" alt="Dummy-img" />
                 </div>
                 <div className="content">
