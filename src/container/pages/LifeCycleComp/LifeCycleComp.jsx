@@ -1,6 +1,7 @@
 // LifeCycle React => urutan yg terjadi dalam react
 import React, { Component , Fragment } from 'react';
 import './LifeCycleComp.css'
+import { connect } from "react-redux";
 
 class LifeCycleComp extends Component {
     state = {
@@ -68,9 +69,17 @@ class LifeCycleComp extends Component {
                 <p>Halaman LifeCycle Component</p>
                 <hr />
                 <button className='btn' onClick={this.changeCount}>Component Button {this.state.count}</button>
+                <hr />
+                <p>Total Order : {this.props.order}</p>
             </Fragment>
         )
     }
 }
 
-export default LifeCycleComp;
+const mapStateToProps = (state) => {
+    return{
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps)(LifeCycleComp);

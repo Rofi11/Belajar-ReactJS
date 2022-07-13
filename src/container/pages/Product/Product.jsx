@@ -3,22 +3,23 @@
 import React, { Component, Fragment } from 'react';
 import './Product.css'
 import CardProduct from './CardProduct/CardProduct';
+import { connect } from "react-redux";
 
 // statefull component
 
 
 class Product extends Component {
-    state = {
-        order: 4 //akan di update oleh child nya atau function di bawah
-    }
+    // state = {
+    //     order: 4 //akan di update oleh child nya atau function di bawah
+    // }
 
     // untuk mengupdate state order
     // urutan 4
-    handleCounterChange = (newValue) => {
-        this.setState({
-            order: newValue
-        })
-    }
+    // handleCounterChange = (newValue) => {
+    //     this.setState({
+    //         order: newValue
+    //     })
+    // }
 
     render(){
         return(
@@ -31,10 +32,10 @@ class Product extends Component {
                     </div>
                     <div className="troley">
                         <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="troley" />
-                        <div className="count">{this.state.order}</div>
+                        <div className="count">{this.props.order}</div>
                     </div>
                 </div>
-                <CardProduct onCounterChange={(value) => {this.handleCounterChange(value)}}/> 
+                <CardProduct/> 
                 {/* urutan 1 => lanjutan nya susuai urutan*/}
                     {/* onCounterChange adalah props , nama yg dipake bebas, ini  contoh props yg memanggil function*/}
                     {/* function nya yg dapat merubah nilai dari parent nya */}
@@ -44,4 +45,10 @@ class Product extends Component {
     }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+    return{
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps) (Product);
