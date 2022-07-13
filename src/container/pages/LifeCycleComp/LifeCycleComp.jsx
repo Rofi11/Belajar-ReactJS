@@ -68,6 +68,8 @@ class LifeCycleComp extends Component {
                 <p>Halaman LifeCycle Component</p>
                 <hr />
                 <button className='btn' onClick={this.changeCount}>Component Button {this.state.count}</button>
+                <hr />
+                <p>Total Order: xxx</p>
             </Fragment>
         )
     }

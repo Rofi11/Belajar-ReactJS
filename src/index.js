@@ -1,27 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Link } from "react-router-dom"; // import bagian BrowserRouter disini
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import Home from './container/Home/Home';
-import {BrowserRouter, Route, Link } from "react-router-dom"; // import bagian BrowserRouter disini
 import './container/Home/Home.css'
-
-
+// import {createStore} from 'redux'
+// import {Provider} from 'react-redux'
+// import rootReducer  from './redux/reducer/globalReducer';
 // remote github nya bernama coba-react
+
+
+// store
+// const storeRedux = createStore(rootReducer)
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      {/* navigation di tambahkan di tempat merender */}
-        <div className="navigation">
-            <Link to="/"> BlogPost </Link>
-            <Link to="/Product"> Product </Link>
-            <Link to="/LifeCycleComp"> LifeCycleComp </Link>
-            <Link to="/youtube-component"> Youtube </Link>
-        </div>
-        <Home/>
+      {/* <Provider store={storeRedux}>  // ini kalo pakai redux*/}
+        {/* navigation di tambahkan di tempat merender */}
+          <div className="navigation">
+              <Link to="/"> BlogPost </Link>
+              <Link to="/Product"> Product </Link>
+              <Link to="/LifeCycleComp"> LifeCycleComp </Link>
+              <Link to="/youtube-component"> Youtube </Link>
+          </div>
+          <Home/>
+      {/* </Provider> */}
     </React.StrictMode>  
   </BrowserRouter>
 );
