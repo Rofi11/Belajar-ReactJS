@@ -48,9 +48,9 @@ class Counter extends Component{
                         console.log('value', value) //value ini di ambil dari global state di home.jsx
                         return(
                             <div className="counter">
-                            <button className="minus" onClick={this.handleMinus}>-</button>
-                            <input type="text" value={value.totalOrder}/>
-                            <button className="plus" onClick={this.handlePlus}>+</button>
+                            <button className="minus" onClick={ ()=> value.dispatch({type:'MINUS_ORDER'}) }>-</button>
+                            <input type="text" value={value.state.totalOrder}/>
+                            <button className="plus" onClick={ ()=> value.dispatch({type:'PLUS_ORDER'}) }>+</button>
                             </div>
                         )
                     }

@@ -11,20 +11,33 @@ const Provider = RootContext.Provider
 // statefull component karena pakai class
 class Home extends Component {
     state = {
-        totalOrder: 5
+        totalOrder: 0
     }
 
-    // componentDidMount() {
-    //     // setTimeout(() => {
-    //     //     this.setState({
-    //     //         showComponent: false
-    //     //     })
-    //     // }, 15000)
-    // }
+    // membuat sebuah function utk dispatch kalo di redux
+        // namanya bisa bebas, agar mudah di mengerti kia pakai dispatch saja, tapi penggunaan nya sama kaya dispatch
+
+    dispatch = (action) => {
+        if(action.type === 'PLUS_ORDER'){
+            return this.setState({
+                totalOrder: this.state.totalOrder + 1
+            })
+        }
+        if(action.type === 'MINUS_ORDER' && this.state.totalOrder > 0){
+            return this.setState({
+                totalOrder: this.state.totalOrder - 1
+            })
+        }
+    }
 
     render() {
         return (
-            <Provider value={this.state}>
+            <Provider value={ //value disisni bisa mengirimkan object 
+                {
+                    state: this.state,
+                    dispatch: this.dispatch
+                }
+            }>
                 <Routes>
                     {/* membuat route nya wajib didalam routes, fragment bertugas utk terlihat jadi one child karna React hanya merender one child */}
                     <Fragment> 

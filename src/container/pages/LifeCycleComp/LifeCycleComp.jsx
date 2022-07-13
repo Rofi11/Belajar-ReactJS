@@ -1,6 +1,7 @@
 // LifeCycle React => urutan yg terjadi dalam react
 import React, { Component , Fragment } from 'react';
 import './LifeCycleComp.css'
+import Home, {RootContext} from '../../Home/Home';
 
 class LifeCycleComp extends Component {
     state = {
@@ -21,12 +22,6 @@ class LifeCycleComp extends Component {
 
     componentDidMount () {
         console.log('componentDidMount')
-        // mengupdate state
-        // setTimeout(() => {
-        //     this.setState({
-        //         count: 2
-        //     })
-        // }, 5000)
     }
 
     shouldComponentUpdate(nextProps, nextState){
@@ -64,13 +59,21 @@ class LifeCycleComp extends Component {
     render(){
         console.log('render')
         return(
-            <Fragment>
-                <p>Halaman LifeCycle Component</p>
-                <hr />
-                <button className='btn' onClick={this.changeCount}>Component Button {this.state.count}</button>
-                <hr />
-                <p>Total Order: xxx</p>
-            </Fragment>
+            <RootContext.Consumer>
+                {
+                    (value) => {
+                        return(
+                            <Fragment>
+                                <p>Halaman LifeCycle Component</p>
+                                <hr />
+                                <button className='btn' onClick={this.changeCount}>Component Button {this.state.count}</button>
+                                <hr />
+                                <p>Total Order: {value.state.totalOrder}</p>
+                            </Fragment>
+                        )
+                    }
+                }
+            </RootContext.Consumer>
         )
     }
 }
