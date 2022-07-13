@@ -21,7 +21,6 @@ class Product extends Component {
                     <div className="troley">
                         <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="troley" />
                         <div className="count">{this.props.state.totalOrder}</div>
-
                     </div>
                 </div>
                 <CardProduct/> 
