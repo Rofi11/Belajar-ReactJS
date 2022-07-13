@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Home, {RootContext} from '../../../Home/Home';
+import { GlobalConsumer } from '../../../../context/context';
 
 
 class Counter extends Component{
@@ -40,26 +40,17 @@ class Counter extends Component{
     //     }
     // }
     render(){
+        console.log(this)
         return(
-            // utk bisa menggunakan consumer ini harus memanggil arrow function
-            <RootContext.Consumer>
-                {
-                    (value) => {
-                        console.log('value', value) //value ini di ambil dari global state di home.jsx
-                        return(
-                            <div className="counter">
-                            <button className="minus" onClick={ ()=> value.dispatch({type:'MINUS_ORDER'}) }>-</button>
-                            <input type="text" value={value.state.totalOrder}/>
-                            <button className="plus" onClick={ ()=> value.dispatch({type:'PLUS_ORDER'}) }>+</button>
-                            </div>
-                        )
-                    }
-                }
-            </RootContext.Consumer>
+            <div className="counter">
+            <button className="minus" onClick={ ()=> this.props.dispatch({type:'MINUS_ORDER'}) }>-</button>
+            <input type="text" value={this.props.state.totalOrder}/>
+            <button className="plus" onClick={ ()=> this.props.dispatch({type:'PLUS_ORDER'}) }>+</button>
+            </div>
         )
         
     }
 }
 
 
-export default Counter;
+export default GlobalConsumer(Counter);
