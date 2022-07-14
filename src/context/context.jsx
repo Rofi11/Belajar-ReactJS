@@ -63,6 +63,7 @@ export const GlobalConsumer = (Children) => {
                                 (value) => {
                                     return(
                                         <Children {...this.props} {...value}/>
+                                        // value nya menyimpan value global
                                     )
                                 }
                             }
