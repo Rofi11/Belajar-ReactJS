@@ -1,8 +1,8 @@
 // LifeCycle React => urutan yg terjadi dalam react
 import React, { Component , Fragment } from 'react';
-import { GlobalConsumer } from '../../../context/context';
 import './LifeCycleComp.css'
 import { connect } from "react-redux";
+import {GlobalConsumer} from '../../../context/context'
 
 class LifeCycleComp extends Component {
     state = {
@@ -23,6 +23,12 @@ class LifeCycleComp extends Component {
 
     componentDidMount () {
         console.log('componentDidMount')
+        // mengupdate state
+        // setTimeout(() => {
+        //     this.setState({
+        //         count: 2
+        //     })
+        // }, 5000)
     }
 
     shouldComponentUpdate(nextProps, nextState){
@@ -65,24 +71,16 @@ class LifeCycleComp extends Component {
                 <hr />
                 <button className='btn' onClick={this.changeCount}>Component Button {this.state.count}</button>
                 <hr />
-<<<<<<< HEAD
                 <p>Total Order: {this.props.state.totalOrder}</p>
-=======
-                <p>Total Order : {this.props.order}</p>
->>>>>>> master
             </Fragment>
         )
     }
 }
 
-<<<<<<< HEAD
-export default GlobalConsumer(LifeCycleComp);
-=======
-const mapStateToProps = (state) => {
-    return{
-        order: state.totalOrder
-    }
-}
+// const mapStateToProps = (state) => {
+//     return{
+//         order: state.totalOrder
+//     }
+// }
 
-export default connect(mapStateToProps)(LifeCycleComp);
->>>>>>> master
+export default GlobalConsumer(LifeCycleComp);
