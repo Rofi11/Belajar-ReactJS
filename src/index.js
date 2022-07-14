@@ -27,6 +27,8 @@ root.render(
               <Link to="/Product"> Product </Link>
               <Link to="/LifeCycleComp"> LifeCycleComp </Link>
               <Link to="/youtube-component"> Youtube </Link>
+              <Link to="/Hooks"> Hooks </Link>
+              
           </div>
           <Home/>
       {/* </Provider> */}

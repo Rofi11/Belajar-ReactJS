@@ -5,6 +5,7 @@ import Product from '../pages/Product/Product';
 import {Routes, Route, Link } from "react-router-dom";// import bagian routes dan route bisa disini, atauoun di index.js bersama BrowserRouter
 import YoutubeCompPages from '../pages/YoutubeCompPages/YoutubeCompPages'
 import GlobalProvider from '../../context/context';
+import Hooks from '../pages/Hooks/Hooks';
 
 
 // statefull component karena pakai class
@@ -19,6 +20,7 @@ class Home extends Component {
                         <Route path="/Product" element={<Product/>} />  
                         <Route path="/LifeCycleComp" element={<LifeCycleComp/>} />
                         <Route path="/youtube-component" element={<YoutubeCompPages/>} />
+                        <Route path="/Hooks" element={<Hooks/>} />
                     </Fragment> 
                 </Routes>
         )
