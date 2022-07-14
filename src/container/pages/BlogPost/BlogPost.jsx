@@ -3,7 +3,7 @@ import React, { Component,Fragment } from 'react';
 import Post from '../../../component/Post/Post';
 import './BlogPost.css'
 import axios from 'axios';
-
+import { useNavigate } from 'react-router';
 
 class Blogpost extends Component {
     // 1.buat state yg berisi array kosong
@@ -110,6 +110,11 @@ class Blogpost extends Component {
         // liat di console nya di data object
     }
 
+    handleDetail = (id) => { //masih gagal
+        let navigate = useNavigate()
+        navigate(`/detail-post/${id}`)
+    }
+
     render() {
         return(
             <Fragment>
@@ -125,7 +130,7 @@ class Blogpost extends Component {
                 </div>
                 {
                     this.state.post.map(post => {
-                        return <Post key={post.id} data={post} remove={this.handleRemove} Update={this.handleUpdate}/>
+                        return <Post key={post.id} data={post} remove={this.handleRemove} Update={this.handleUpdate} goDetail={this.handleDetail}/>
                     })
                 }
                 

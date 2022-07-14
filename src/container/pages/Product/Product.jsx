@@ -3,12 +3,30 @@
 import React, { Component, Fragment } from 'react';
 import './Product.css'
 import CardProduct from './CardProduct/CardProduct';
+<<<<<<< HEAD
 import { GlobalConsumer } from '../../../context/context';
+=======
+import { connect } from "react-redux";
+>>>>>>> master
 
 // statefull component
 
 
 class Product extends Component {
+<<<<<<< HEAD
+=======
+    // state = {
+    //     order: 4 //akan di update oleh child nya atau function di bawah
+    // }
+
+    // untuk mengupdate state order
+    // urutan 4
+    // handleCounterChange = (newValue) => {
+    //     this.setState({
+    //         order: newValue
+    //     })
+    // }
+>>>>>>> master
 
     render(){
         return(
@@ -21,7 +39,11 @@ class Product extends Component {
                     </div>
                     <div className="troley">
                         <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="troley" />
+<<<<<<< HEAD
                         <div className="count">{this.props.state.totalOrder}</div>
+=======
+                        <div className="count">{this.props.order}</div>
+>>>>>>> master
                     </div>
                 </div>
                 <CardProduct/> 
@@ -34,4 +56,14 @@ class Product extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default GlobalConsumer(Product);
+=======
+const mapStateToProps = (state) => {
+    return{
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps) (Product);
+>>>>>>> master

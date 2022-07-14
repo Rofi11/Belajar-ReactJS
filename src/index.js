@@ -6,21 +6,35 @@ import './index.css';
 import App from './App';
 import Home from './container/Home/Home';
 import './container/Home/Home.css'
+<<<<<<< HEAD
 // import {createStore} from 'redux'
 // import {Provider} from 'react-redux'
 // import rootReducer  from './redux/reducer/globalReducer';
+=======
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import rootReducer  from './redux/reducer/globalReducer';
+>>>>>>> master
 // remote github nya bernama coba-react
 
 
 // store
+<<<<<<< HEAD
 // const storeRedux = createStore(rootReducer)
+=======
+const storeRedux = createStore(rootReducer)
+>>>>>>> master
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
+<<<<<<< HEAD
       {/* <Provider store={storeRedux}>  // ini kalo pakai redux*/}
+=======
+      <Provider store={storeRedux}> 
+>>>>>>> master
         {/* navigation di tambahkan di tempat merender */}
           <div className="navigation">
               <Link to="/"> BlogPost </Link>
@@ -29,7 +43,11 @@ root.render(
               <Link to="/youtube-component"> Youtube </Link>
           </div>
           <Home/>
+<<<<<<< HEAD
       {/* </Provider> */}
+=======
+      </Provider>
+>>>>>>> master
     </React.StrictMode>  
   </BrowserRouter>
 );
