@@ -2,12 +2,8 @@
     // ini adalah child nya karena Card Product
 
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import Counter from './Counter'
-=======
-import Counter from './Counter';
 
->>>>>>> master
 
 
 // statefull component
