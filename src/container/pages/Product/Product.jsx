@@ -34,4 +34,3 @@ class Product extends Component {
 }
 
 export default GlobalConsumer(Product);
-

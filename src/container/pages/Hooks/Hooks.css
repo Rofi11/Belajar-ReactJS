@@ -1,0 +1,17 @@
+.p-hooks{
+    margin: 10px 10px;
+    padding: 20px;
+}
+
+.btn-hooks{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    background-color: rgba(23, 47, 168, 0.77);
+}
+
+.btn-hooks:hover{
+    cursor: pointer;
+}

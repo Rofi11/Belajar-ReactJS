@@ -10,7 +10,6 @@ import Hooks from '../pages/Hooks/Hooks';
 
 // statefull component karena pakai class
 class Home extends Component {
-
     render() {
         return (
                 <Routes>

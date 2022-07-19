@@ -23,12 +23,6 @@ class LifeCycleComp extends Component {
 
     componentDidMount () {
         console.log('componentDidMount')
-        // mengupdate state
-        // setTimeout(() => {
-        //     this.setState({
-        //         count: 2
-        //     })
-        // }, 5000)
     }
 
     shouldComponentUpdate(nextProps, nextState){
@@ -73,10 +67,10 @@ class LifeCycleComp extends Component {
                 <hr />
                 <p>Total Order: {this.props.state.totalOrder}</p>
             </Fragment>
-        )
+        ) 
+        
     }
 }
-
 // const mapStateToProps = (state) => {
 //     return{
 //         order: state.totalOrder
